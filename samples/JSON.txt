@@ -1,0 +1,43 @@
+=================S3==================
+{
+   "RegionAWS": "sa-east-1",
+   "BucketName": "",   
+   "FilePath": "C:\\temp\\Test.pdf"   
+}
+
+=================SMS=================
+{
+   "RegionAWS": "sa-east-1",
+   "AppID": "",
+   "MessageBody": "Hello World",
+   "RecipientList":[
+      "+5599999999999",
+      "+5599999999999"
+   ]
+}
+
+=================EMAIL=================
+{
+   "RegionAWS": "sa-east-1",
+   "EmailSender": "host_aws@domain.com",
+   "Subject": "Hello World",
+   "MessageBody": "This Test",
+   "RecipientList":[
+	  "usuario123@domain.com",
+	  "usuario321@domain.com"
+   ]
+}
+
+{
+   "RegionAWS": "sa-east-1",
+   "EmailSender": "host_aws@domain.com",
+   "Subject": "Hello World",
+   "MessageBody": "This Test",
+   "RecipientList": [
+	  "usuario123@domain.com",
+	  "usuario321@domain.com"
+   ]
+   "FilePathList": [
+	  "C:\\temp\\Test.pdf"
+   ]
+}

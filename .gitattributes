@@ -1,0 +1,2 @@
+$ cat .gitattributes
+*.cs linguist-language=Pascal
