@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls;
 
 type
   TfrmSamples = class(TForm)
@@ -54,6 +55,7 @@ type
     btnDelDestination: TButton;
     btnDelRecipient: TButton;
     btnDelFile: TButton;
+    Image1: TImage;
     procedure btnSendSMSClick(Sender: TObject);
     procedure btnSearchFileS3Click(Sender: TObject);
     procedure btnSendFileClick(Sender: TObject);
