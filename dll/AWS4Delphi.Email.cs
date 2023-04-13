@@ -79,16 +79,17 @@ namespace AWS4Delphi.Email
                     TextBody = inputParametersEmail.MessageBody
                 };
 
-                //Attachments
-                dadosEmail.fileAttach = new MemoryStream();
-
+                //Attachments                
                 foreach (string file in inputParametersEmail.FilePathList)
                 {
                     string fileName = Path.GetFileName(file);
+                    string extName = Path.GetExtension(file);
+                    
+                    dadosEmail.fileAttach = new MemoryStream();
 
-                    ReadPdfIntoMemoryStream(dadosEmail.fileAttach, file);
+                    ReadIntoMemoryStream(dadosEmail.fileAttach, file);
                     dadosEmail.fileAttach.Seek(0, System.IO.SeekOrigin.Begin);
-                    dadosEmail.bodyBuilder.Attachments.Add(fileName, dadosEmail.fileAttach/*, new ContentType("application", "pdf")*/);
+                    dadosEmail.bodyBuilder.Attachments.Add(fileName, dadosEmail.fileAttach, new ContentType("application", extName));
                 }                
 
                 //Stakeholders
@@ -121,7 +122,7 @@ namespace AWS4Delphi.Email
             }
         }
 
-        private static void ReadPdfIntoMemoryStream(MemoryStream memoryStream, string filePath)
+        private static void ReadIntoMemoryStream(MemoryStream memoryStream, string filePath)
         {
             byte[] fileContents = File.ReadAllBytes(filePath);
             memoryStream.Write(fileContents, 0, fileContents.Length);
